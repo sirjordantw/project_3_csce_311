@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <sys/stat.h>
 
 // Headers
 #include "proj3/lib/include/mmap.h"
