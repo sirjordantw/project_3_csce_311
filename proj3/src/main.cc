@@ -15,7 +15,7 @@ void create(const char* path, char fill_char, size_t size) {
     }
 
     proj3::ftruncate(file, size);
-    void* addr = proj3::mmap(nullptr, 
+    void* addr = proj3::mmap(nullptr,
         size,
         proj3::PROT_READ | proj3::PROT_WRITE,
         proj3::MAP_SHARED,
@@ -31,10 +31,16 @@ void create(const char* path, char fill_char, size_t size) {
 
 void insert(const char* path, size_t offset, size_t bytes) {
     int file = proj3::open(path, proj3::O_RDWR);
+    if (file == -1) {
+        return;
+    }
 }
 
 void append(const char* path, size_t bytes) {
     int file = proj3::open(path, proj3::O_RDWR, proj3::O_APPEND);
+    if (file == -1) {
+        return;
+    }
 }
 
 int main(int argc, char* argv[]) {
