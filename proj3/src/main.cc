@@ -4,7 +4,6 @@
 
 // Libraries
 #include <iostream>
-#include <string>
 #include <vector>
 #include <cstring>
 #include <cstdint>
@@ -130,7 +129,7 @@ void append(const char* path, size_t bytes) {
         size_t chunk = std::min(remainingBytes, chunkSize);
         proj3::ftruncate(file, offset + chunk);
 
-        // Assigns file to an address and finds a sport to write to.
+        // Assigns file to an address and finds a spot to write to.
         void* addr = proj3::mmap(nullptr,
             offset + chunk,
             proj3::PROT_READ | proj3::PROT_WRITE,
